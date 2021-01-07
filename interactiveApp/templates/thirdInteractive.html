@@ -1,0 +1,63 @@
+<html lang="en">
+{% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+    <title>Confirm Character</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Skelio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/" style="text-align: center;">Reset<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+    <div class="container">
+      <main role="main" class="pb-3">
+          <div class="text-center" style="margin: auto; border-radius: 1em; background-color: #E2D7D7;">
+              <div style="padding: 3em;">
+                  <div style="padding: 1em; background-color: rgba(0, 0, 0, 0.25); margin-left: auto; margin-right: auto; border-radius: 1em; color: black; width: 50%;">
+                      <div style="text-align: center;">
+                        <h1>Confirm Information</h1>
+                        <h4>Your class is: {{aClass}}</h4>
+                        <img style="padding-top: .5em;" src="{% static 'images/UserClasses/' %}{{ aClass }}.png" id="ClassIMG" height="250em" width="250em"/>
+                        <h4 style="padding-top: .5em;">Your race is: {{aRace}}</h4>
+                        <img style="padding-top: .5em;" src="{% static 'images/RaceClasses/' %}{{ aRace }}.jpg" id="RaceIMG" height="250em" width="250em"/>
+                        <h4 style="padding-top: .5em;" id="thirdText">Hello {{aName}}, your talents as a {{aClass}} have been noted and you have been picked for this job. Good luck {{aRace}}</h4>
+                        <br/>
+                        <a href="http://127.0.0.1:8000/" id="home"><button name="RedoButton" id="Redo" class="btn btn-primary">Redo Information</button></a>
+                        <a href="http://127.0.0.1:8000/fourthInteractive" id="continue"><button name="ContinueButton" id="cont" class="btn btn-primary" style="padding-left: 1em;">Continue With Your Story</button></a>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+      </main>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
