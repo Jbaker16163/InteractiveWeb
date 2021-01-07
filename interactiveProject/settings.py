@@ -123,6 +123,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR,'static-files')
 
 STATICFILES_DIRS = [
-    'D:/home/site/wwwroot/static',
+    'D:/home/site/interactiveApp/static',
     os.path.join(BASE_DIR,'static'),
 ]

@@ -20,7 +20,6 @@ from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     url(r'^$', views.home_page, name='home'),
     url(r'^firstInteractive/$', views.first_page, name='firstInteractive'),
     url(r'^secondInteractive/$', views.second_page, name='secondInteractive'),
