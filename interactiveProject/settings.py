@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%$gn2#!60ook^gces63+5_frjmw%(bz26rhbkwj7l9^c03^$cn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -123,6 +123,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR,'static-files')
 
 STATICFILES_DIRS = [
-    'D:/home/site/interactiveApp/static',
+    'D:/home/site/wwwroot/static',
     os.path.join(BASE_DIR,'static'),
 ]
