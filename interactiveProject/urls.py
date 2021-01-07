@@ -20,11 +20,11 @@ from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     url(r'^$', views.home_page, name='home'),
     url(r'^firstInteractive/$', views.first_page, name='firstInteractive'),
     url(r'^secondInteractive/$', views.second_page, name='secondInteractive'),
     url(r'^thirdInteractive/$', views.third_page, name='thirdInteractive'),
     url(r'^fourthInteractive/$', views.fourth_page, name='fourthInteractive'),
     url(r'^fifthInteractive/$', views.fifth_page, name='fifthInteractive'),
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
