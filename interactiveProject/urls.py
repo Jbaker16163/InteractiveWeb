@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from interactiveApp import views
+from django.views.static import serve
+from django.conf import settings
 
 urlpatterns = [
     url(r'^$', views.home_page, name='home'),
@@ -24,4 +26,5 @@ urlpatterns = [
     url(r'^thirdInteractive/$', views.third_page, name='thirdInteractive'),
     url(r'^fourthInteractive/$', views.fourth_page, name='fourthInteractive'),
     url(r'^fifthInteractive/$', views.fifth_page, name='fifthInteractive'),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
