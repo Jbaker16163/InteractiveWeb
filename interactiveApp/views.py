@@ -23,5 +23,6 @@ def fourth_page(request):
     adventureData['aLocation'] = request.POST.get('location', None)
 
     return render(request, 'fourthInteractive.html', adventureData)
+
 def fifth_page(request):
     return render(request, 'fifthInteractive.html', adventureData)
