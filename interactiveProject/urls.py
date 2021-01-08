@@ -18,6 +18,7 @@ from django.contrib import admin
 from interactiveApp import views
 from django.views.static import serve
 from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home_page, name='home'),
@@ -27,3 +28,4 @@ urlpatterns = [
     url(r'^fourthInteractive/$', views.fourth_page, name='fourthInteractive'),
     url(r'^fifthInteractive/$', views.fifth_page, name='fifthInteractive'),
 ]
+
