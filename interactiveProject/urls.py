@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^thirdInteractive/$', views.third_page, name='thirdInteractive'),
     url(r'^fourthInteractive/$', views.fourth_page, name='fourthInteractive'),
     url(r'^fifthInteractive/$', views.fifth_page, name='fifthInteractive'),
+    url(r'^sixthInteractive/$', views.sixth_page, name='sixthInteractive'),
 ]
 

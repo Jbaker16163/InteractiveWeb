@@ -1,0 +1,251 @@
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://jbaker16163.github.io/StyleForInteractive/style/css/style.css" />
+    <title>Starting Area</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Skelio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/" style="text-align: center;">Reset<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="text-center" style="margin: auto; border-radius: 1em; background-color: #E2D7D7;">
+                <div style="padding: 3em;">
+                    <div
+                        style="padding: 1em; background-color: rgba(0, 0, 0, 0.25); margin-left: auto; margin-right: auto; border-radius: 1em; color: black; width: 50%;">
+                        <div style="text-align: center;">
+                            <div style="vertical-align: middle;">
+                                
+                                {% if aLocation == "Town" and aClass == "Warrior" %}
+                                <h3 style="padding-top: .5em;" id="townAttack">The town is about to be attacked by a
+                                    group of goblins! You must protect it with your life!</h3>
+                                <p>You use your mighty body to defend the town from the threat of the goblins! You
+                                    become crippled but successfully defend the town!</p>
+                                {% elif aLocation == "Town" and aClass == "Paladin" %}
+                                <h3 style="padding-top: .5em;" id="townAttack">The town is about to be attacked by a
+                                    group of goblins! You must protect it with your life!</h3>
+                                <p>Being the tanky healing paladin that you are, you kill the goblins without any threat
+                                    to you! You are the hero of the town!</p>
+                                {% elif aLocation == "Town" and aClass == "Hunter" %}
+                                <h3 style="padding-top: .5em;" id="townAttack">The town is about to be attacked by a
+                                    group of goblins! You must protect it with your life!</h3>
+                                <p>You are unable to do much when it comes to a horde of goblins! You were able to pick
+                                    off a few but they swarm you and take over the town. You die.</p>
+                                {% elif aLocation == "Town" and aClass == "Rogue" %}
+                                <h3 style="padding-top: .5em;" id="townAttack">The town is about to be attacked by a
+                                    group of goblins! You must protect it with your life!</h3>
+                                <p>You are a sneaky assassin and while a few of the goblins seem distracted you
+                                    infiltrate the group and kill the leader, causing the rest of them to turn to a
+                                    rage. They kill the town but you escape.</p>
+                                {% elif aLocation == "Town" and aClass == "Priest" %}
+                                <h3 style="padding-top: .5em;" id="townAttack">The town is about to be attacked by a
+                                    group of goblins! You must protect it with your life!</h3>
+                                <p>As a priest, you stand tall against the goblins. You trade blows with them, you heal
+                                    the blows you take instantly. You are able to
+                                    kill all the goblins this way but are completely drained of your mana. You will need
+                                    to take months of rest in order to recover fully.
+                                </p>
+                                {% elif aLocation == "Town" and aClass == "Shaman" %}
+                                <h3 style="padding-top: .5em;" id="townAttack">The town is about to be attacked by a
+                                    group of goblins! You must protect it with your life!</h3>
+                                <p>You heard the goblins coming through a familar of yours, you were able to prepare for
+                                    the worst and summoned a high tier demon. This demon
+                                    killed all the goblins.
+                                </p>
+                                {% elif aLocation == "Town" and aClass == "Mage" %}
+                                <h3 style="padding-top: .5em;" id="townAttack">The town is about to be attacked by a
+                                    group of goblins! You must protect it with your life!</h3>
+                                <p>Whenever a villager spotted the goblins, you quickly took action. Yet it was too late
+                                    for you to completely save the town.
+                                    You threw out your highest tier spell which was called Fire Bolt! You burn down the
+                                    goblins but you also burn down the food cellar for the town.
+                                    You saved the town for now, but their will be dire consequences later on for your
+                                    mistakes.
+                                </p>
+                                {% elif aLocation == "City" and aClass == "Warrior" %}
+                                <h3 style="padding-top: .5em;" id="cityAttack">The city that you live in has a constant
+                                    threat of wyvern attacks! This proves costly but
+                                    is a good source of income for the town. The wyverns occassionally do kill people
+                                    inside the town though.</h3>
+                                <p>Within the horde of warriors that belong to the city! You were easily able to repel
+                                    the threat of wyverns this time! Next time, you may
+                                    not be so lucky!
+                                </p>
+                                {% elif aLocation == "City" and aClass == "Paladin" %}
+                                <h3 style="padding-top: .5em;" id="cityAttack">The city that you live in has a constant
+                                    threat of wyvern attacks! This proves costly but
+                                    is a good source of income for the town. The wyverns occassionally do kill people
+                                    inside the town though.</h3>
+                                <p>Being such a big target against the wyverns! You as a paladin stood out greatly for
+                                    the wyvern attack. They focused you and killed you. You die.</p>
+                                {% elif aClass == "Hunter" %}
+                                <h3 style="padding-top: .5em;" id="cityAttack">The city that you live in has a constant
+                                    threat of wyvern attacks! This proves costly but
+                                    is a good source of income for the town. The wyverns occassionally do kill people
+                                    inside the town though.</h3>
+                                <p>While the wyverns are flying high, you with your bow as a hunter, are able to snipe
+                                    them from the sky with powerful arrows reinforced with mana.
+                                    You easily repel the wyverns.
+                                </p>
+                                {% elif aLocation == "City" and aClass == "Rogue" %}
+                                <h3 style="padding-top: .5em;" id="cityAttack">The city that you live in has a constant
+                                    threat of wyvern attacks! This proves costly but
+                                    is a good source of income for the town. The wyverns occassionally do kill people
+                                    inside the town though.</h3>
+                                <p>You are unable to do much when it comes to winged beasts flying above the city. Your
+                                    best bet is to flee before they find you. You escape
+                                    but the city has lost a great number of people.
+                                </p>
+                                {% elif aLocation == "City" and aClass == "Priest" %}
+                                <h3 style="padding-top: .5em;" id="cityAttack">The city that you live in has a constant
+                                    threat of wyvern attacks! This proves costly but
+                                    is a good source of income for the town. The wyverns occassionally do kill people
+                                    inside the town though.</h3>
+                                <p>You are able to as a priest to be able to heal others who could easily defeat the
+                                    wyverns. You heal the paladins who inhabited the city.
+                                    The paladins with the help of priests defeat the wyvern and collect the largest
+                                    score from this harvest.
+                                </p>
+                                {% elif aLocation == "City" and aClass == "Shaman" %}
+                                <h3 style="padding-top: .5em;" id="cityAttack">The city that you live in has a constant
+                                    threat of wyvern attacks! This proves costly but
+                                    is a good source of income for the town. The wyverns occassionally do kill people
+                                    inside the town though.</h3>
+                                <p>You are unable to prepare for the wyverns due to the wyverns speed. You quickly
+                                    hasten of a spell of a high tier demon but as you summon him,
+                                    he betrays you and goes on a killing rampage. He kills everyone he can find
+                                    including you. You die.
+                                </p>
+                                {% elif aLocation == "City" and aClass == "Mage" %}
+                                <h3 style="padding-top: .5em;" id="cityAttack">The city that you live in has a constant
+                                    threat of wyvern attacks! This proves costly but
+                                    is a good source of income for the town. The wyverns occassionally do kill people
+                                    inside the town though.</h3>
+                                <p>The mage squadron forms which you belong to. You are able to quickly use ice magic to
+                                    quickly annihilate the wyverns and take the score.
+                                    The scales and the horns from the wyverns though are battered with holes from the
+                                    ice that was used to kill them so the pay will be small.
+                                </p>
+                                {% elif aLocation == "Forest" and aClass == "Warrior" %}
+                                <h3 style="padding-top: .5em;" id="forestAttack">The forest that you protect has become
+                                    overrun with bandits who live in them in wait for
+                                    travellers. You must kill these bandits before the forest you live in becomes
+                                    tainted with innocent blood.</h3>
+                                <p>You find a group of 10 bandits. You have trained well as a warrior who is able to
+                                    face any threat. You are confident in your ability and
+                                    face them head on. You were easily able to defeat 8 of them but the last 2 prove to
+                                    worthy in battle. They defeat you but recruit you to join
+                                    instead of taking your life.
+                                </p>
+                                {% elif aLocation == "Forest" and aClass == "Paladin" %}
+                                <h3 style="padding-top: .5em;" id="forestAttack">The forest that you protect has become
+                                    overrun with bandits who live in them in wait for
+                                    travellers. You must kill these bandits before the forest you live in becomes
+                                    tainted with innocent blood.</h3>
+                                <p>You decided to go looking for the bandits without much care for your safety. You end
+                                    up in one of their traps they have set. You were ambushed.
+                                    You use your magic in order to break free but it is too late. They have surrounded
+                                    you and attacked you simultaneously. You have lost. You died.
+                                </p>
+                                {% elif aLocation == "Forest" and aClass == "Hunter" %}
+                                <h3 style="padding-top: .5em;" id="forestAttack">The forest that you protect has become
+                                    overrun with bandits who live in them in wait for
+                                    travellers. You must kill these bandits before the forest you live in becomes
+                                    tainted with innocent blood.</h3>
+                                <p>Being a hunter who has lived in this forest for as long as he can remember. You can
+                                    easily tell a disturbance in a certain area and you stake out the
+                                    hideout. You wait and easily snipe off three people who went out looking for
+                                    supplies. The others split off in a group of 3 and 4. You take care of
+                                    the group of three first and then move onto the group of four. You charge a arrow
+                                    full of mana and guide the arrow through the air to kill the
+                                    remaining four. You tear down their camp and move back to your hideout.
+                                </p>
+                                {% elif aLocation == "Forest" and aClass == "Rogue" %}
+                                <h3 style="padding-top: .5em;" id="forestAttack">The forest that you protect has become
+                                    overrun with bandits who live in them in wait for
+                                    travellers. You must kill these bandits before the forest you live in becomes
+                                    tainted with innocent blood.</h3>
+                                <p>Masking your location with your stealth abilities. You hide from the 10 people as
+                                    they are inside their camp. You take them out 1 by 1 not alerting
+                                    a single one to your location. They didn't know what hit them.
+                                </p>
+                                {% elif aLocation == "Forest" and aClass == "Priest" %}
+                                <h3 style="padding-top: .5em;" id="forestAttack">The forest that you protect has become
+                                    overrun with bandits who live in them in wait for
+                                    travellers. You must kill these bandits before the forest you live in becomes
+                                    tainted with innocent blood.</h3>
+                                <p>As a priest who believes in peace. You make your way towards the bandits last know
+                                    location. You get ambushed by them and they kill you without a
+                                    second thought. A quick way out for a rather dumb priest.
+                                </p>
+                                {% elif aLocation == "Forest" and aClass == "Shaman" %}
+                                <h3 style="padding-top: .5em;" id="forestAttack">The forest that you protect has become
+                                    overrun with bandits who live in them in wait for
+                                    travellers. You must kill these bandits before the forest you live in becomes
+                                    tainted with innocent blood.</h3>
+                                <p>A shaman of your quality doesn't deserve to live in this forest but you promised to
+                                    protect this place. You summon a very powerful monster who could
+                                    easily wipe the floor with the bandits. They had no chance. They all died and you
+                                    used their bodies to strengthen your ties with demons.
+                                </p>
+                                {% elif aLocation == "Forest" and aClass == "Mage" %}
+                                <h3 style="padding-top: .5em;" id="forestAttack">The forest that you protect has become
+                                    overrun with bandits who live in them in wait for
+                                    travellers. You must kill these bandits before the forest you live in becomes
+                                    tainted with innocent blood.</h3>
+                                <p>As a mage, you cast a spell which gives you an idea of where they are camping. You
+                                    make your way to their camp but they have tricked you using their own
+                                    magic. You were ambushed, robbed of your arcane staff, and sold into slavery. You
+                                    make sure to keep a mental note of them for your revenge in the future.
+                                </p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
