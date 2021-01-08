@@ -68,13 +68,13 @@ class FourthPageTest(TestCase):
         found = resolve('/fourthInteractive/')
         self.assertEqual(found.func, fourth_page, 'Fourth page resolves incorrectly')
 
-        def testFourthPageInfo(self):
-            request = HttpRequest()
-            response = interactiveApp.views.fourth_page(request)
-            html = response.content.decode('utf8')
-            self.assertTrue(html.startswith('<html lang="en">'))
-            self.assertIn('<title>Location Selection</title>', html)
-            self.assertTrue(html.endswith('</html>'))
+    def testFourthPageInfo(self):
+        request = HttpRequest()
+        response = interactiveApp.views.fourth_page(request)
+        html = response.content.decode('utf8')
+        self.assertTrue(html.startswith('<html lang="en">'))
+        self.assertIn('<title>Location Selection</title>', html)
+        self.assertTrue(html.endswith('</html>'))
 
 class FifthPageTest(TestCase):
 
@@ -82,10 +82,24 @@ class FifthPageTest(TestCase):
         found = resolve('/fifthInteractive/')
         self.assertEqual(found.func, fifth_page, 'Fifth page resolves incorrectly')
 
-        def testFifthPageInfo(self):
-            request = HttpRequest()
-            response = interactiveApp.views.fourth_page(request)
-            html = response.content.decode('utf8')
-            self.assertTrue(html.startswith('<html lang="en">'))
-            self.assertIn('<title>Starting Area</title>', html)
-            self.assertTrue(html.endswith('</html>'))
+    def testFifthPageInfo(self):
+        request = HttpRequest()
+        response = interactiveApp.views.fifth_page(request)
+        html = response.content.decode('utf8')
+        self.assertTrue(html.startswith('<html lang="en">'))
+        self.assertIn('<title>Starting Area</title>', html)
+        self.assertTrue(html.endswith('</html>'))
+    
+class SixthPageTest(TestCase):
+
+    def testSixthPage(self):
+        found = resolve('/sixthInteractive/')
+        self.assertEqual(found.func, sixth_page, 'Sixth page resolves incorrectly')
+
+    def testSixthPageInfo(self):
+        request = HttpRequest()
+        response = interactiveApp.views.sixth_page(request)
+        html = response.content.decode('utf8')
+        self.assertTrue(html.startswith('<html lang="en">'))
+        self.assertIn('<title>Outcome</title>', html)
+        self.assertTrue(html.endswith('</html>'))

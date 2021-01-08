@@ -10,7 +10,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
         fireFoxOptions = webdriver.FirefoxOptions()
-        fireFoxOptions.headless=True
+        fireFoxOptions.headless=False
         self.browser = webdriver.Firefox(options=fireFoxOptions)
         self.browser.get('http://127.0.0.1:8000')
 
@@ -110,14 +110,14 @@ class NewVisitorTest(unittest.TestCase):
         classIMG = self.browser.find_element_by_id('ClassIMG')
         self.assertEqual(
             classIMG.get_attribute('src'),
-            'http://127.0.0.1:8000/static/images/UserClasses/Hunter.png'
+            'https://jbaker16163.github.io/StyleForInteractive/style/images/UserClasses/Hunter.png'
         )
 
         #Checks Undead IMG
         RaceIMG = self.browser.find_element_by_id('RaceIMG')
         self.assertEqual(
             RaceIMG.get_attribute('src'),
-            'http://127.0.0.1:8000/static/images/RaceClasses/Undead.jpg'
+            'https://jbaker16163.github.io/StyleForInteractive/style/images/RaceClasses/Undead.jpg'
         )
 
         #Checks to see if redo button sends you back to home page
@@ -195,14 +195,72 @@ class NewVisitorTest(unittest.TestCase):
         userLocationIMG = self.browser.find_element_by_id('userLocationIMG')
         self.assertEqual(
             userLocationIMG.get_attribute('src'),
-            'http://127.0.0.1:8000/static/images/UserLocations/Town.jpg'
+            'https://jbaker16163.github.io/StyleForInteractive/style/images/UserLocations/Town.jpg'
         )
+
+    def testForSixthPage(self):
+        #Correct Information
+        inputbox = self.browser.find_element_by_id('inputBoxName')
+        inputbox.send_keys('ExampleAdventureName')
+        inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
+        self.browser.find_element_by_id('firstButton').click()
+        time.sleep(1)
+        self.browser.find_element_by_id('Hunter').click()
+        self.browser.find_element_by_id('submitFirst').click()
+        self.browser.find_element_by_id('toSecondInteractive').click()
+        headerOption2 = self.browser.find_element_by_tag_name('h1').text
+        self.browser.find_element_by_id('Undead').click()
+        self.browser.find_element_by_id('submitRace').click()
+        time.sleep(1)
+        self.browser.find_element_by_id('toThirdInteractive').click()
+        self.browser.find_element_by_id('continue').click()
+        self.browser.find_element_by_id('Town').click()
+        self.browser.find_element_by_id('submitLocation').click()
+        self.browser.find_element_by_id('beg').click()
+        time.sleep(1)
+        self.browser.find_element_by_id('toSixth').click()
+
+        #Check for Correct Text
+        hunterText = self.browser.find_element_by_id('hunterEnd').text
+        self.assertIn('You are unable to do much when it comes to a horde of goblins! You were able to pick off a few but they swarm you and take over the town. You die.', hunterText)
+
+class LiveTest(unittest.TestCase):
+
+    def setUp(self):
+        fireFoxOptions = webdriver.FirefoxOptions()
+        fireFoxOptions.headless=False
+        self.browser = webdriver.Firefox(options=fireFoxOptions)
+        self.browser.get('https://interactivewebapp.azurewebsites.net/')
+
+    def tearDown(self):
+        self.browser.quit()
+
+    def testForSixthPage(self):
+        #Correct Information
+        inputbox = self.browser.find_element_by_id('inputBoxName')
+        inputbox.send_keys('ExampleAdventureName')
+        inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
+        self.browser.find_element_by_id('firstButton').click()
+        time.sleep(1)
+        self.browser.find_element_by_id('Rogue').click()
+        self.browser.find_element_by_id('submitFirst').click()
+        self.browser.find_element_by_id('toSecondInteractive').click()
+        headerOption2 = self.browser.find_element_by_tag_name('h1').text
+        self.browser.find_element_by_id('Undead').click()
+        self.browser.find_element_by_id('submitRace').click()
+        time.sleep(1)
+        self.browser.find_element_by_id('toThirdInteractive').click()
+        self.browser.find_element_by_id('continue').click()
+        self.browser.find_element_by_id('City').click()
+        self.browser.find_element_by_id('submitLocation').click()
+        self.browser.find_element_by_id('beg').click()
+        time.sleep(1)
+        self.browser.find_element_by_id('toSixth').click()
         
-
-
-
-
-        
+        rogueEndText = self.browser.find_element_by_id('BadEndRogue').text
+        self.assertIn('You are unable to do much when it comes to winged beasts flying above the city. Your best bet is to flee before they find you. You escape but the city has lost a great number of people.', hunterText)
 
 if __name__ == '__main__':
     unittest.main()
