@@ -10,7 +10,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
         fireFoxOptions = webdriver.FirefoxOptions()
-        fireFoxOptions.headless=False
+        fireFoxOptions.headless=True
         self.browser = webdriver.Firefox(options=fireFoxOptions)
         self.browser.get('http://127.0.0.1:8000')
 
@@ -229,14 +229,14 @@ class LiveTest(unittest.TestCase):
 
     def setUp(self):
         fireFoxOptions = webdriver.FirefoxOptions()
-        fireFoxOptions.headless=False
+        fireFoxOptions.headless=True
         self.browser = webdriver.Firefox(options=fireFoxOptions)
         self.browser.get('https://interactivewebapp.azurewebsites.net/')
 
     def tearDown(self):
         self.browser.quit()
 
-    def testForSixthPage(self):
+    def LiveTest(self):
         #Correct Information
         inputbox = self.browser.find_element_by_id('inputBoxName')
         inputbox.send_keys('ExampleAdventureName')
@@ -260,7 +260,7 @@ class LiveTest(unittest.TestCase):
         self.browser.find_element_by_id('toSixth').click()
         
         rogueEndText = self.browser.find_element_by_id('BadEndRogue').text
-        self.assertIn('You are unable to do much when it comes to winged beasts flying above the city. Your best bet is to flee before they find you. You escape but the city has lost a great number of people.', hunterText)
+        self.assertIn('You are unable to do much when it comes to winged beasts flying above the city. Your best bet is to flee before they find you. You escape but the city has lost a great number of people.', rogueEndText)
 
 if __name__ == '__main__':
     unittest.main()
