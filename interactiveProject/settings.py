@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'interactiveApp',
+    'accounts',
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -100,6 +102,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CRISPY_TEMPLATE_PACK="bootstrap4"
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -125,3 +132,4 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT= os.path.join(BASE_DIR,'static-files')
+

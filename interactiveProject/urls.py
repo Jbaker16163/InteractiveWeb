@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import include
 from interactiveApp import views
 from django.views.static import serve
 from django.conf import settings
@@ -22,6 +23,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.home_page, name='home'),
+    url(r'^register/$', views.register, name="register"),
+    url('', include("django.contrib.auth.urls"), name="login"),
     url(r'^firstInteractive/$', views.first_page, name='firstInteractive'),
     url(r'^secondInteractive/$', views.second_page, name='secondInteractive'),
     url(r'^thirdInteractive/$', views.third_page, name='thirdInteractive'),

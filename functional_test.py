@@ -1,3 +1,8 @@
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "interactiveProject.settings")
+import django
+django.setup()
+
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
@@ -10,7 +15,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
         fireFoxOptions = webdriver.FirefoxOptions()
-        fireFoxOptions.headless=True
+        fireFoxOptions.headless=False
         self.browser = webdriver.Firefox(options=fireFoxOptions)
         self.browser.get('http://127.0.0.1:8000')
 
@@ -18,6 +23,15 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
     
     def testForHomePage(self):
+
+        self.browser.find_element_by_id('login').click()
+        time.sleep(2)
+        loginBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[1]/div/input')
+        loginBox.send_keys('Ghios16153')
+        passwordBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[2]/div/input')
+        passwordBox.send_keys('Testpassword65!')
+        passwordBox.send_keys(Keys.ENTER)
+        time.sleep(3)
 
         # Tests Interactive Story Title
         self.assertIn('Skelio Adventure', self.browser.title, 'Wrong Title')
@@ -45,6 +59,15 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(1)
 
     def testForFirstPage(self):
+        self.browser.find_element_by_id('login').click()
+        time.sleep(2)
+        loginBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[1]/div/input')
+        loginBox.send_keys('Ghios16153')
+        passwordBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[2]/div/input')
+        passwordBox.send_keys('Testpassword65!')
+        passwordBox.send_keys(Keys.ENTER)
+        time.sleep(3)
+
         # Checks option 1
         inputbox = self.browser.find_element_by_id('inputBoxName')
         inputbox.send_keys('ExampleAdventureName')
@@ -58,6 +81,14 @@ class NewVisitorTest(unittest.TestCase):
         
     
     def testForSecondPage(self):
+        self.browser.find_element_by_id('login').click()
+        loginBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[1]/div/input')
+        loginBox.send_keys('Ghios16153')
+        passwordBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[2]/div/input')
+        passwordBox.send_keys('Testpassword65!')
+        passwordBox.send_keys(Keys.ENTER)
+        time.sleep(3)
+
         # Checks option 2
         inputbox = self.browser.find_element_by_id('inputBoxName')
         inputbox.send_keys('ExampleAdventureName')
@@ -74,6 +105,15 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.find_element_by_id('submitRace').click()
 
     def testForThirdPage(self):
+        self.browser.find_element_by_id('login').click()
+        time.sleep(2)
+        loginBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[1]/div/input')
+        loginBox.send_keys('Ghios16153')
+        passwordBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[2]/div/input')
+        passwordBox.send_keys('Testpassword65!')
+        passwordBox.send_keys(Keys.ENTER)
+        time.sleep(3)
+
         # Sets up third page information correctly
         inputbox = self.browser.find_element_by_id('inputBoxName')
         inputbox.send_keys('ExampleAdventureName')
@@ -134,6 +174,15 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Choose where you will start:', h1Text)
 
     def testForFourthPage(self):
+        self.browser.find_element_by_id('login').click()
+        time.sleep(2)
+        loginBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[1]/div/input')
+        loginBox.send_keys('Ghios16153')
+        passwordBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[2]/div/input')
+        passwordBox.send_keys('Testpassword65!')
+        passwordBox.send_keys(Keys.ENTER)
+        time.sleep(3)
+
         #Correct Information
         inputbox = self.browser.find_element_by_id('inputBoxName')
         inputbox.send_keys('ExampleAdventureName')
@@ -166,6 +215,15 @@ class NewVisitorTest(unittest.TestCase):
         )
 
     def testForFifthPage(self):
+        self.browser.find_element_by_id('login').click()
+        time.sleep(2)
+        loginBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[1]/div/input')
+        loginBox.send_keys('Ghios16153')
+        passwordBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[2]/div/input')
+        passwordBox.send_keys('Testpassword65!')
+        passwordBox.send_keys(Keys.ENTER)
+        time.sleep(3)
+
         #Correct Information
         inputbox = self.browser.find_element_by_id('inputBoxName')
         inputbox.send_keys('ExampleAdventureName')
@@ -199,6 +257,15 @@ class NewVisitorTest(unittest.TestCase):
         )
 
     def testForSixthPage(self):
+        self.browser.find_element_by_id('login').click()
+        time.sleep(2)
+        loginBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[1]/div/input')
+        loginBox.send_keys('Ghios16153')
+        passwordBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[2]/div/input')
+        passwordBox.send_keys('Testpassword65!')
+        passwordBox.send_keys(Keys.ENTER)
+        time.sleep(3)
+
         #Correct Information
         inputbox = self.browser.find_element_by_id('inputBoxName')
         inputbox.send_keys('ExampleAdventureName')
@@ -237,6 +304,15 @@ class LiveTest(unittest.TestCase):
         self.browser.quit()
 
     def LiveTest(self):
+        self.browser.find_element_by_id('login').click()
+        time.sleep(2)
+        loginBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[1]/div/input')
+        loginBox.send_keys('Ghios16153')
+        passwordBox = self.browser.find_element_by_xpath('/html/body/div/main/div/div/div/form/div[2]/div/input')
+        passwordBox.send_keys('Testpassword65!')
+        passwordBox.send_keys(Keys.ENTER)
+        time.sleep(3)
+
         #Correct Information
         inputbox = self.browser.find_element_by_id('inputBoxName')
         inputbox.send_keys('ExampleAdventureName')
