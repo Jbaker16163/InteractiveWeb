@@ -6211,3 +6211,4 @@ JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERRO
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1610849533408	geckodriver	INFO	Listening on 127.0.0.1:64357
